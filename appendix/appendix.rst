@@ -8,7 +8,7 @@ Appendix
 Example XML file
 ================
 
-Below is an example of XML that might be used to set up the DataExtractor tool for MapInfo. Note, many of the settings have been included for illustration only and it is up to each user or LERC to ensure the system is configured to their requirements.
+Below is an example of XML that might be used to set up the Data Extractor tool for MapInfo. Note, many of the settings have been included for illustration only and it is up to each user or LERC to ensure the system is configured to their requirements.
 
 ::
 
@@ -21,7 +21,7 @@ Below is an example of XML that might be used to set up the DataExtractor tool f
     -->
 
     <!--
-    This config file contains all the variables used by the DataExtractor
+    This config file contains all the variables used by the Data Extractor
     MapBasic tool.
 
     The 'configuration' node is the 'root' node and signifies the start of the

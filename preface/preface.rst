@@ -2,7 +2,7 @@
 Preface
 *******
 
-The most up to date version of this documentation can be found in **HTML** and **PDF** form on `ReadTheDocs <https://readthedocs.org/projects/dataextractor-userguide/>`_.
+The most up to date version of this documentation can be found in **HTML** and **PDF** form on `ReadTheDocs <https://readthedocs.org/projects/dataextractor-arcpro-userguide/>`_.
 
 .. index::
 	single: Recommended user knowledge
@@ -13,10 +13,10 @@ Recommended User Knowledge
 Users
 -----
 
-This user guide assumes that users of the DataExtractor tool have:
+This user guide assumes that users of the ArcGIS Pro version of theDataExtractor tool have:
 
 * General IT experience including the use of Microsoft Windows.
-* Experience in the use of a relevant GIS application supported by the tool (currently MapInfo and ArcGIS), including selecting and querying features and attributes.
+* Experience in the use of the GIS application ArcGIS Pro supported by this version of the tool.
 * An understanding of the datasets that are used by the DataExtractor tool.
 
 
@@ -53,7 +53,7 @@ This Preface explains a little about the DataExtractor tool, the community of pe
 
 :doc:`FAQs <../faq/faq>` \ has a list of commonly asked questions and their answers.
 
-:doc:`../appendix/appendix` \ contains examples of the XML configuration files for MapInfo and ArcGIS, lists known issues with the tool and contains a copy of the GNU Free Documentation License v1.3 covering this guide.
+:doc:`../appendix/appendix` \ contains an example of an XML configuration file for ArcGIS Pro and contains a copy of the GNU Free Documentation License v1.3 covering this guide.
 
 
 .. index::
@@ -66,7 +66,7 @@ The code for the DataExtractor tool is 'open source' and is released under the `
 
 This guide is released under the `GNU Free Documentation License (FDL) v1.3 <http://www.gnu.org/licenses/fdl.html>`_. Permission is granted to copy, distribute and/or modify this document under the terms of the license.
 
-The tool took a lot of time and money to develop and still requires further development and ongoing support to maintain and enhance it. As a contribution towards this cost there is now a voluntary support fee of £30 for the DataExtractor per organisation per year. Any additional contributions towards costs would also be gratefully received. Enquiries can be made via email to `Andy <mailto:andy@andyfoyconsulting.co.uk>`_.
+Please remember, however, that the tool cost a lot of money to develop and still requires further development and ongoing support. Hence any contributions towards costs would be gratefully received. Enquiries can be made via email to `Andy Foy <mailto:andy@andyfoyconsulting.co.uk>`_.
 
 
 .. index::
@@ -77,10 +77,14 @@ Useful links
 
 Related community links:
 
-* Administrators: (`MapInfo Installation <https://github.com/LERCAutomation/DataExtractor-MapInfo/releases/>`_) and (`ArcGIS Installation <https://github.com/LERCAutomation/Data-Extractor-ArcObjects/releases>`_) - Release notes and installers.
-* Developers (`MapInfo Source Code <https://github.com/LERCAutomation/DataExtractor-MapInfo>`_) and (`ArcGIS Source Code <https://github.com/LERCAutomation/Data-Extractor-ArcObjects>`_)- Source code for the DataExtractor tool.
-* Issues (`Known issues for MapInfo and ArcGIS versions <https://trello.com/b/qYhAX0wX/gis-tools-development>`_) - Details of known issues and planned maintenance/enhancements.
+* Administrators (`Releases <https://github.com/LERCAutomation/DataExtractor-ArcPro/releases/>`_) - Release notes and installers for ArcGIS Pro.
+* Developers (`Source code <https://github.com/LERCAutomation/DataExtractor-ArcPro>`_) - Source code for the ArcGIS Pro version of the Data Extractor Tool.
+* Issues (`Issues <https://github.com/LERCAutomation/DataExtractor-ArcPro/issues>`_) - Details of known issues and existing change requests.
 
+
+.. raw:: latex
+
+	\newpage
 
 .. index::
 	single: Acknowledgements
@@ -123,11 +127,14 @@ The following typographical conventions are used in this manual:
 **Tools... --> About**
 	Indicates a menu choice, or a combination of menu choices, tab selections or GUI buttons.
 
-:file:`C:\\Program Files (x86)\\MapInfo\\Professional`
+:file:`D:\\DataTools\\DataSelector\\Config`
 	Indicates a filename or directory name.
 
 .. tip::
 	Tips can help save time or provide shortcuts.
+
+.. seealso::
+	References and/or links to other sections of this guide.
 
 .. note::
 	Notes explain things in more detail or highlight important points.

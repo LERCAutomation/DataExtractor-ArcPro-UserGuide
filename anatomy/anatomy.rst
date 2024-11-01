@@ -1,28 +1,29 @@
-**************************
-Anatomy of data extraction
-**************************
+***********************
+Anatomy of data extract
+***********************
 
 .. index::
 	single: Data extract process
 
-This section describes how a typical data extraction might be carried out manually, and how the DataExtract Tool automates this process. Please note that the examples used in this illustration are purely fictional and do not represent a real-world scenario. 
+This section describes how a typical data extract might be carried out manually, and how the Data Extractor Tool automates this process. Please note that the examples used in this illustration are purely fictional and do not represent a real-world scenario.
 
-Data extraction process
-=======================
+Data extract process
+====================
 
-The process of a typical data extraction can be broken down into a number of distinct steps that are described here. In the next section the way that the DataExtractor Tool carries out these steps is explained.
+The process of a typical data extract can be broken down into a number of distinct steps that are described here. In the next section the way that the Data Extractor Tool carries out these steps is explained.
 
 Defining a partner boundary
-	Before any extraction can be carried out, a polygon describing the area for which data will be extracted for a partner has to be defined. This would be held in a single GIS layer together with some associated attributes such as the name of the organisation represented by the boundary. Once this area has been entered into the GIS layer it can be used time and again.
+	Before any extract can be carried out, a polygon area for which data will be extracted for a partner has to be defined. This may be held in a single GIS layer together with some associated attributes such as the name of the organisation represented by the boundary. Once this area has been entered into the GIS layer it can be used time and again.
 
 Selecting the relevant data layers
 	Using the boundary defined in the previous step, each of the data layers relating to the presence of protected sites, habitats, species, etc. is selected one by one. Where data is held within SQL Server this process is carried out within the SQL Server database.
 
 Exporting the results
-	The selected features are extracted in the format required by the user, containing only the relevant columns required from each data layer. Symbology may also need to be applied at this step.
+	The selected features are extracted in the format required by the user, containing only the relevant columns required from each data layer.
 
 Repeating the process
 	Where there is more than one partner for which data needs to be extracted, the whole process will be repeated for each partner boundary.
+
 
 .. raw:: latex
 
@@ -31,27 +32,28 @@ Repeating the process
 .. index::
 	single: Tool overview
 
-The DataExtractor tool
+The Data Extractor tool
 =======================
 
 Tool components
 ---------------
 
-There are four component parts to the DataExtractor tool that work together to automate the process described above:
+There are four component parts to the Data Extractor tool that work together to automate the process described above:
 
 1. A GIS layer that describes the boundaries of all relevant partners and stakeholders. This is held both within the GIS application and within SQL Server.
-#. Spatial data held in an SQL database and / or in spatial data layers within the GIS application. Where data is held within SQL Server a stored procedure for its extraction is also required.
+#. Spatial data held in an SQL database and / or in map layers within the GIS application. Where data is held within SQL Server several stored procedures for its extract are also required.
 #. An XML configuration file that specifies how the extracts are set up and what data should be exported for each data layer.
-#. The DataExtractor tool itself.
+#. The Data Extractor tool itself.
 
-The DataExtractor tool is used within a GIS application and requires all the required GIS layers to be preloaded in the GIS (see :numref:`figMapInfoUI`). Where data is to be extracted from SQL Server the partner boundary layer must also be preloaded into the SQL Server database.
+The Data Extractor tool is used within a GIS application and requires all the required GIS layers to be preloaded in the GIS (see :numref:`figInterfaceAnnotated). Where data is to be extracted from SQL Server the partner boundary layer must also be preloaded into the SQL Server database.
 
-.. _figMapInfoUI:
+.. _figInterfaceAnnotated:
 
-.. figure:: figures/InterfaceMapInfoAnnotated.png
+.. figure:: figures/InterfaceAnnotated.png
 	:align: center
 
-	A MapInfo workspace configured for using the DataExtractor tool
+	Example of an ArcGIS Pro map configured for the Data Extractor tool
+
 
 .. raw:: latex
 
@@ -60,29 +62,32 @@ The DataExtractor tool is used within a GIS application and requires all the req
 Tool workflow
 -------------
 
-The DataExtractor tool requires minimum user input in order to carry out its processes once it is configured. The simple workflow is as follows (see :numref:`figUIAnn`):
+The Data Extractor tool requires minimum user input in order to carry out its processes once it is configured. The simple workflow is as follows (see :numref:`figUIAnnotated`):
 
-1. The user selects which partner(s) and/or stakeholders the extraction should be carried out.
-#. The user specifies which data layers to extract from. Only layers that are loaded in the GIS or tables found in the SQL Server database are made available at this point.
-#. The user selects whether the extracted files should be compressed in a zip file once complete, whether any records should be excluded from the SQL Server table, and whether the log file should be cleared before the process starts.
-#. Finally, the user selects whether the selection of SQL Server data should be based on spatial location only, survey tags only, or both. This allows for the inclusion of data relevant to a partner that is outside of that partner's boundary.
-#. Once the user clicks **OK** the process starts.
-
-
-.. _figUIAnn:
+.. _figUIAnnotated:
 
 .. figure:: figures/MenuExampleAnnotated.png
 	:align: center
 
-	The DataExtractor tool workflow
+	The Data Extractor tool workflow
 
+
+1. The user selects which partner(s) and/or stakeholder(s) the extract should be carried out for.
+#. The user specifies which SQL layer extracts to create. All layers are extracted from the same SQL table defined for each partner/stakeholder.
+#. The user specifies which map layers to extract from. Only map layers that are loaded in the GIS are made available at this point.
+#. The user selects whether any records should be excluded from the SQL table.
+#. The user selects whether polygon records in the SQL table should be selected based on their centroid rather than their boundary.
+#. The user selects whether the partner GIS layer should be uploaded to the server to refresh the copy held there.
+#. The user selects whether the selection of SQL Server data should be based on spatial location only, survey tags only, or both. This allows for the inclusion of data relevant to a partner that is outside of that partner's boundary.
+#. The user opts to clear the log file before starting and/or open the log file after completion.
+#. Finally, the user clicks **Run** and the process starts.
 
 In essence, the process that the tool follows is identical to the manual process a user would perform:
 
 1. The boundary of each selected partner is processed in sequence. 
-#. The specified SQL Server and GIS data layers are selected using the boundary (and/or the survey tags) for this partner.
-#. The resulting selections are exported to the output folder as specified in the configuration file, using the attribute columns and symbology specified in this configuration file.
-#. During the process the tool outputs its progress to a log file and, when the process finishes, this log file is displayed allowing the user to assess the success of the data extraction.
+#. The specified SQL and GIS data layers are selected using the boundary (and/or the survey tags) for this partner.
+#. The resulting selections are exported to the output folder as specified in the configuration file, using the attribute columns specified in this configuration file, in the format specified for each partner/output.
+#. During the process the tool outputs its progress to a log file and, when the process finishes, this log file can be displayed allowing the user to assess the success of the data extract.
 
 
 .. raw:: latex
@@ -95,65 +100,35 @@ In essence, the process that the tool follows is identical to the manual process
 Tool outputs
 ============
 
-Below is a selection of outputs generated from an example data extraction using the data selections shown in figure :numref:`figMapInfoUI`. The extraction was carried out for all partners shown in the user interface. 
+Below is an example of the GIS outputs generated from a data extract (:numref:`figGISOutputExample`).
 
 Output folder
 -------------
 
-The outputs are stored in a user-defined folder (:numref:`figOutputFolder`). These outputs may include a combination of GIS layers and text files in different formats, as well as the log file.
+The outputs are stored in a user-defined folder (:numref:`figTabularOutputExample`). These outputs may include a combination of GIS layers and text files in different formats, as well as the log file.
 
-.. _figOutputFolder:
+GIS layers can be output in ArcGIS (.shp) format or into an ArcGIS file geodatabase. Text file outputs can be produced in CSV or TXT format (:numref:`figTabularOutput`). Both type of outputs can be saved in separate sub-folders, if required, to keep them separate.
+
+.. _figTabularOutputExample:
 
 .. figure:: figures/OutputFolderAnnotated.png
 	:align: center
 
-	Example of the DataExtractor tool output folder
+	Example of the Data Extractor tool output folder
+
 
 .. raw:: latex
 
    \newpage
 
-Output files
-------------
-
-Text file outputs can be produced in CSV or TXT format (:numref:`figTabularOutput`). GIS layers can be output in MapInfo (.tab) format and/or ArcGIS (.shp) format (for MapInfo users) or ArcGIS (.shp) format (for ArcGIS users).
-
-
-.. _figTabularOutput:
-
-.. figure:: figures/ExampleTabularOutput.png
-	:align: center
-
-	Example of a text file output from the DataExtractor tool
-
-.. raw:: latex
-
-   \newpage
-
-Output options
---------------
-
-Options in the tool include compressing all outputs into a single zip file for each partner (:numref:`figOutputOptions`; MapInfo only), including confidential records (defined in the configuration document) in any SQL table extracts, and clearing the log file before use.
-
-.. _figOutputOptions:
-
-.. figure:: figures/OutputOptionsAnnotated.png
-	:align: center
-
-	Example of a compressed output file containing a single GIS layer (MapInfo)
-
-.. raw:: latex
-
-   \newpage
-
-Finally, the log file details each step that was taken during the process, and gives some feedback about the outcomes of the steps. This includes reporting on the input for the search, the number of features that were selected in each data layer, and which data layers did not return any features (:numref:`figLogFileExample`).
+The log file details each step that was taken during the process, and gives some feedback about the outcomes of the steps. This includes reporting on the selected options, the number of features that were selected in each data layer, and which outputs were generated (:numref:`figLogFileExample`).
 
 .. _figLogFileExample:
 
-.. figure:: figures/LogFileExample.png
+.. figure:: figures/ExampleLogFile.png
 	:align: center
 
-	Example of a DataExtractor tool log file
+	Example of a Data Extractor tool log file
 
 
-The following chapters, :doc:`setting up the tool <../setup/setup>` and :doc:`running the tool <../execute/execute>`, will guide you through setting up and operating the tool in such a way that these tool outputs meet the exact requirements of data extraction within your organisation.
+The following chapters, :doc:`Setting up the tool <../setup/setup>` and :doc:`Running the tool <../execute/execute>`, will guide you through setting up and operating the tool in such a way that these tool outputs meet the exact requirements of data extracts within your organisation.

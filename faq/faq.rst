@@ -6,14 +6,14 @@
 Frequently Asked Questions
 **************************
 
-This is a list of Frequently Asked Questions about the DataExtractor tool. Feel free to suggest new entries!
+This is a list of Frequently Asked Questions about the Data Extractor tool. Feel free to suggest new entries!
 
 General questions
 =================
 
 **How do I get a copy of the tool?**
 
-	The latest version of the tool can be downloaded from `GitHub <https://github.com/LERCAutomation/DataExtractor-MapInfo/releases>`_. Please ensure that you use the correct configuration file, an example copy of which is also included with the release.
+	The latest version of the tool can be downloaded from `GitHub <https://github.com/LERCAutomation/DataExtractor-ArcPro/releases>`_. Please ensure that you use the correct configuration file, an example copy of which is also included with the release.
 
 **Can several people use the tool at the same time?**
 
