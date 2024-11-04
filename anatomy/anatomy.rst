@@ -107,9 +107,9 @@ Output folder
 
 The outputs are stored in a user-defined folder (:numref:`figTabularOutputExample`). These outputs may include a combination of GIS layers and text files in different formats, as well as the log file.
 
-GIS layers can be output in ArcGIS (.shp) format or into an ArcGIS file geodatabase. Text file outputs can be exported in CSV or TXT format (:numref:`figTabularOutput`). Both type of outputs can be saved in separate sub-folders, if required, to keep them separate.
+GIS layers can be output in ArcGIS (.shp) format or into an ArcGIS file geodatabase. Text file outputs can be exported in CSV or TXT format. Both type of outputs can be saved in separate sub-folders, if required, to keep them separate (:numref:`figGISOutputExample`).
 
-.. _figTabularOutputExample:
+.. _figGISOutputExample:
 
 .. figure:: figures/OutputFolderAnnotated.png
 	:align: center

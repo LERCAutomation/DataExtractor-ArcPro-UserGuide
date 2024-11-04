@@ -145,7 +145,7 @@ _`SQLTableColumn`
 	The name of the column in the partner GIS layer indicating which SQL table should be used for that partner.
 
 _`SQLFilesColumn`
-	The name of the column in the partner GIS layer indicating which SQL tables should be extracted for each partner. The entry in this column should be a comma-delimited list of the names of the layers (as defined in the XML file under :ref:`SQLTables <SQLTables>`) that should be included for each partner.
+	The name of the column in the partner GIS layer indicating which SQL tables should be extracted for each partner. The entry in this column should be a comma-delimited list of the names of the layers (as defined in the XML file under :ref:`SQLLayers <SQLTables>`) that should be included for each partner.
 
 _`MapFilesColumn`
 	The name of the column in the partner GIS layer indicating which ArcGIS layers should be extracted for each partner. The entry in this column should be a comma-delimited list of the names of the layers (as defined in the XML file under :ref:`MapLayers <MapLayers>`) that should be included for each partner.
@@ -199,6 +199,8 @@ _`DefaultOpenLogFile`
 
 SQL layer attributes
 ********************
+
+.. _SQLLayers:
 
 While the spatial selection that the tool carries out is over the entirety of the SQL table selected associated with each partner, subsets of this data can be written out using the SQL table attributes. The details of these subsets are defined in the ``<SQLLayers>`` node.
 
