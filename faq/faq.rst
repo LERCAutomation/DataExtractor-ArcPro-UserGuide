@@ -43,7 +43,7 @@ Operating the tool
 
 **The tool is not extracting the expected data for the partner**
 
-	This issue will arise if the names of files in the :ref:`SQLLayers <SQLLayers>` and/or :ref:`MapLayers <MapLayers>` are not correct. Check that the names match the node names in the XML configuration file. Alternatively, check the :ref:`FormatColumn <FormatColumn>` and the :ref:`ExportColumn <ExportColumn>` to ensure the correct format of data is requested.
+	This issue will arise if the names of files in the :ref:`SQLFiles` column and/or :ref:`MapFiles>` column are not correct. Check that the names match the node names in the XML configuration file. Alternatively, check the :ref:`FormatColumn <FormatColumn>` and the :ref:`ExportColumn <ExportColumn>` to ensure the correct format of data is requested.
 
 
 Tool issues

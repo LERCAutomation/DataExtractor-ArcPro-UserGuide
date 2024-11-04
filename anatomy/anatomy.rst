@@ -52,7 +52,7 @@ The Data Extractor tool is used within a GIS application and requires all the re
 .. figure:: figures/InterfaceAnnotated.png
 	:align: center
 
-	Example of an ArcGIS Pro map configured for the Data Extractor tool
+	Example of an ArcGIS Pro project configured for the Data Extractor tool
 
 
 .. raw:: latex
@@ -105,7 +105,7 @@ Below is an example of the GIS outputs generated from a data extract (:numref:`f
 Output folder
 -------------
 
-The outputs are stored in a user-defined folder (:numref:`figTabularOutputExample`). These outputs may include a combination of GIS layers and text files in different formats, as well as the log file.
+The outputs are stored in a user-defined folder (:numref:`figGISOutputExample`). These outputs may include a combination of GIS layers and text files in different formats, as well as the log file.
 
 GIS layers can be output in ArcGIS (.shp) format or into an ArcGIS file geodatabase. Text file outputs can be exported in CSV or TXT format. Both type of outputs can be saved in separate sub-folders, if required, to keep them separate (:numref:`figGISOutputExample`).
 

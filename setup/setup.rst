@@ -37,7 +37,7 @@ These configuration files must be in the same folder as the tool configuration f
 .. note::
 	The XML profiles can have any name prefix as long as they have a '.xml' file extension.
 
-The XML file can be edited in a text editor such as Notepad. It is split into three sections:
+XML files can be edited in a text editor such as Notepad. It is split into three sections:
 
 _`General attributes`
 	General and default attributes for the tool.
@@ -145,10 +145,10 @@ _`SQLTableColumn`
 	The name of the column in the partner GIS layer indicating which SQL table should be used for that partner.
 
 _`SQLFilesColumn`
-	The name of the column in the partner GIS layer indicating which SQL tables should be extracted for each partner. The entry in this column should be a comma-delimited list of the names of the layers (as defined in the XML file under :ref:`SQLLayers <SQLTables>`) that should be included for each partner.
+	The name of the column in the partner GIS layer indicating which SQL tables should be extracted for each partner. The entry in this column should be a comma-delimited list of the names of the layers (as defined in the XML file under ``<SQLTables>``) that should be included for each partner.
 
 _`MapFilesColumn`
-	The name of the column in the partner GIS layer indicating which ArcGIS layers should be extracted for each partner. The entry in this column should be a comma-delimited list of the names of the layers (as defined in the XML file under :ref:`MapLayers <MapLayers>`) that should be included for each partner.
+	The name of the column in the partner GIS layer indicating which ArcGIS layers should be extracted for each partner. The entry in this column should be a comma-delimited list of the names of the layers (as defined in the XML file under ``<MapTables>``) that should be included for each partner.
 
 _`TagsColumn`
 	The name of the column in the partner GIS layer indicating which survey tags, if any, should be included in the export. The survey tags should be a comma-delimited list.
@@ -197,14 +197,16 @@ _`DefaultOpenLogFile`
 .. index::
 	single: SQL layer attributes
 
-SQL layer attributes
+SQL Table attributes
 ********************
 
-.. _SQLLayers:
+.. _SQLTables:
 
-While the spatial selection that the tool carries out is over the entirety of the SQL table selected associated with each partner, subsets of this data can be written out using the SQL table attributes. The details of these subsets are defined in the ``<SQLLayers>`` node.
+While the spatial selection that the tool carries out is over the entirety of the SQL table selected associated with each partner, subsets of this data can be written out using the SQL table attributes. The details of these subsets are defined in the ``<SQLTables>`` node.
 
-For each subset that may be included in the extracts a new child node must be created. For example, the node name (e.g. ``<AllSpecies>``) is a user-defined name used to identify an individual subset - the same name should be used in the `SQLFilesColumn`_ column in the partner layer to indicate that this subset should be extracted for a partner.
+For each subset that may be included in the extracts a new child node must be created. For example, the node name (e.g. ``<AllSppPoint>``) is a user-defined name used to define a subset output for all point species records.
+
+	.. note:: This node name must be included in the `SQLFilesColumn`_ column in the partner layer to indicate that this subset should be extracted for a partner.
 
 The attributes that are required for each SQL table are as follows:
 
@@ -237,12 +239,16 @@ _`MacroParm`
 .. index::
 	single: Map layer attributes
 
-Map layer attributes
+Map Table attributes
 ********************
 
-.. _MapLayers:
+.. _MapTables:
 
-All map layer attributes are found within the ``<MapLayers>`` node. For each data layer that can be included in the extracts a new child node must be created. For example, the node name (e.g. ``<SSSIs>``) is a user-defined name used to identify the layer - the same name should be used in the `MapFilesColumn`_ column in the partner layer to indicate that this layer should be extracted for a partner. The attributes that are required for each map layer are as follows:
+All map layer attributes are found within the ``<MapTables>`` node. For each data layer that can be included in the extracts a new child node must be created. For example, the node name (e.g. ``<SSSIs>``) is a user-defined name used to define an output of the SSSIs GIS layer.
+
+	.. note:: This node name must be included in the `MapFilesColumn`_ column in the partner layer to indicate that this subset should be extracted for a partner.
+
+The attributes that are required for each map layer are as follows:
 
 _`LayerName`
 	The name of the source GIS layer as it is known in the ArcPro active map. This is also the name that will be used for the output shapefile or geodatabase feature class.
@@ -319,37 +325,37 @@ _`Spatial_Tables` table
 
 	.. table:: Format of the Spatial_Tables table
 
-		+-----------------+-----------------------------------------------------------------------------------------------+
-		|      Column     |                                          Description                                          |
-		+=================+===============================================================================================+
-		| TableName       | The name of the data table                                                                    |
-		+-----------------+-----------------------------------------------------------------------------------------------+
-		| OwnerName       | The database owner, usually ``dbo``                                                           |
-		+-----------------+-----------------------------------------------------------------------------------------------+
-		| XColumn         | The name of the column holding the X coordinates of the record                                |
-		+-----------------+-----------------------------------------------------------------------------------------------+
-		| YColumn         | The name of the column holding the Y coordinates of the record                                |
-		+-----------------+-----------------------------------------------------------------------------------------------+
-		| SizeColumn      | The name of the column holding the grid size of the record (in metres)                        |
-		+-----------------+-----------------------------------------------------------------------------------------------+
-		| IsSpatial       | Bitwise column (1 = Yes, 0 = No) defining whether the table is spatially enabled              |
-		+-----------------+-----------------------------------------------------------------------------------------------+
-		| SpatialColumn   | If the table is spatially enabled, the name of the geometry column (e.g. ``SP_GEOMETRY``)     |
-		+-----------------+-----------------------------------------------------------------------------------------------+
-		| SRID            | The name of the spatial reference system used to plot the records                             |
-		+-----------------+-----------------------------------------------------------------------------------------------+
-		| CoordSystem     | The coordinate system of the spatial data in the table                                        |
-		+-----------------+-----------------------------------------------------------------------------------------------+
-		| SurveyKeyColumn | The column containing the survey key for each record                                          |
-		+-----------------+-----------------------------------------------------------------------------------------------+
+		+-----------------+--------------------------------------------------------------------------+
+		|      Column     |                                          Description                     |
+		+=================+==========================================================================+
+		| TableName       | The name of the data table                                               |
+		+-----------------+--------------------------------------------------------------------------+
+		| OwnerName       | The database owner, usually ``dbo``                                      |
+		+-----------------+--------------------------------------------------------------------------+
+		| XColumn         | The name of the column holding the X coordinates of the record           |
+		+-----------------+--------------------------------------------------------------------------+
+		| YColumn         | The name of the column holding the Y coordinates of the record           |
+		+-----------------+--------------------------------------------------------------------------+
+		| SizeColumn      | The name of the column holding the grid size of the record (in metres)   |
+		+-----------------+--------------------------------------------------------------------------+
+		| IsSpatial       | Column (1 = Yes, 0 = No) defining whether the table is spatially enabled |
+		+-----------------+--------------------------------------------------------------------------+
+		| SpatialColumn   | The name of the geometry column (e.g. ``SP_GEOMETRY``)                   |
+		+-----------------+--------------------------------------------------------------------------+
+		| SRID            | The name of the spatial reference system used to plot the records        |
+		+-----------------+--------------------------------------------------------------------------+
+		| CoordSystem     | The coordinate system of the spatial data in the table                   |
+		+-----------------+--------------------------------------------------------------------------+
+		| SurveyKeyColumn | The column containing the survey key for each record                     |
+		+-----------------+--------------------------------------------------------------------------+
 
 	.. note::
-		The British National Grid `SRID` value is
-		``Earth Projection 8, 79, "m", -2, 49, 0.9996012717, 400000, -100000 Bounds
-		(-7845061.1011, -15524202.1641) (8645061.1011, 4470074.53373)``
+		The British National Grid `SRID` value is:
+		"Earth Projection 8, 79, "m", -2, 49, 0.9996012717, 400000, -100000 Bounds
+		(-7845061.1011, -15524202.1641) (8645061.1011, 4470074.53373)"
 
 	.. caution::
-		This table must be filled out correctly for each SQL table or view that is available to the Data Extractor tool.
+		This table must be filled out correctly for each SQL table or view that is suitable for the Data Extractor tool.
 
 _`Spatial_Objects` view
 	This view provides a list of all tables and views in the SQL database that contain spatial 'geometry' and hence are available to the Data Extractor tool.
@@ -384,26 +390,26 @@ _`Notes`
 _`Active`
 	A Y/N flag to indicate if the partner is currently active. The name of this column must specified in the XML profile general attribute `ActiveColumn`_. The values in this column should be ``Y`` or ``N``.
 
-		..note:: Only active partners will appear in the tool interface and be available for processing.
+		.. note:: Only active partners will appear in the tool interface and be available for processing.
 
 _`GISFormat`
 	The GIS format required for the output records. The name of this column must specified in the XML profile general attribute `FormatColumn`_. The values in the column should be ``SHP`` or ``GDB``.
 
-		..note:: If this column is left blank no spatial outputs will be generated.
+		.. note:: If this column is left blank no spatial outputs will be generated.
 
 _`ExportFormat`
 	The text format required for the exported records. The name of this column must specified in the XML profile general attribute `ExportColumn`_. The values in this column should be ``CSV`` or ``TXT``.
 
-		..note:: If this column is left blank no text exports will be generated.
+		.. note:: If this column is left blank no text exports will be generated.
 
 _`SQLTable`
 	Which SQL table should be used for the partner. The name of this column must specified in the XML profile general attribute `SQLTableColumn`_.
 
 _`SQLFiles`
-	Which SQL files should be extracted for the partner. The name of this column must specified in the XML profile general attribute `SQLFilesColumn`_. The entry in this column should be a comma-delimited list of the names of the layers (as defined in the XML file under :ref:`SQLTables <SQLTables>`) that should be included for each partner.
+	Which SQL files should be extracted for the partner. The name of this column must specified in the XML profile general attribute `SQLFilesColumn`_. The entry in this column should be a comma-delimited list of the names of the layers (as defined in the XML file under ``<SQLTables>``) that should be included for each partner.
 
 _`MapFiles`
-	Which GIS files should be extracted for the partner. The name of this column must specified in the XML profile general attribute `MapFilesColumn`_. The entry in this column should be a comma-delimited list of the names of the layers (as defined in the XML file under :ref:`MapLayers <MapLayers>`) that should be included for each partner.
+	Which GIS files should be extracted for the partner. The name of this column must specified in the XML profile general attribute `MapFilesColumn`_. The entry in this column should be a comma-delimited list of the names of the layers (as defined in the XML file under :ref:``<MapTables>``) that should be included for each partner.
 
 _`Tags`
 	Which survey tags, if any, should be included in the extracts. The name of this column must specified in the XML profile general attribute `TagsColumn`_. The survey tags should be a comma-delimited list.

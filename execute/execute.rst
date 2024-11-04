@@ -198,6 +198,10 @@ Select the SQL tables you wish to include in the extract in the 'SQL Layers' lis
 		The attributes of a SQL layer can be displayed by 'double-clicking' the layer name in the list of SQL layers in the tool interface.
 
 
+.. raw:: latex
+
+   \newpage
+
 Select the Map tables you wish to include in the extract in the 'Map Layers' list (:numref:`figSelectMapLayers`).
 
 .. _figSelectMapLayers:
@@ -230,6 +234,10 @@ There are three options:
 - **Survey Tags Only** ... SQL layers records are selected purely on the survey tags included in the TagsColumn.
 - **Spatial and Survey Tags** ... Both a spatial intersection and any records with the relevant survey tags are included in the extract.
 
+
+.. raw:: latex
+
+   \newpage
 
 Next, decide whether the exclusion clause defined in the XML profile, a user-defined SQL criteria for excluding any unwanted records, should be appended to any SQL criteria already defined against each SQL layer (:numref:`figExclusionClauseOption`). This can be useful, for example, to exclude non-commercially licensed records from some partners whilst allowing them to be included for others.
 
@@ -278,7 +286,7 @@ Finally, select whether the log file should be overwritten, and whether the log 
 Running the extract
 ===================
 
-Once the extract requirements and the options selected, click **Run**.
+Once the extract requirements have been specified and the options selected, click **Run**.
 
 While the process is running a progress bar will appear at the bottom of the form providing details of progress (:numref:`figProgressBar`).
 
@@ -293,6 +301,10 @@ While the process is running a progress bar will appear at the bottom of the for
 .. caution::
 	The tool can run for a considerable amount of time dependent on the number of partners and layers that have been being selected.
 
+
+.. raw:: latex
+
+   \newpage
 
 When the extract has finished the log file will be opened (:numref:`figLogFile`), if required, so that you can check the process has completed correctly.
 

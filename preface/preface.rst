@@ -127,7 +127,7 @@ The following typographical conventions are used in this manual:
 **Tools... --> About**
 	Indicates a menu choice, or a combination of menu choices, tab selections or GUI buttons.
 
-:file:`D:\\DataTools\\DataSelector\\Config`
+:file:`D:\\DataTools\\DataExtractor\\Config`
 	Indicates a filename or directory name.
 
 .. tip::
