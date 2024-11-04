@@ -32,7 +32,7 @@ Operating the tool
 
 	- The layer isn't loaded in your GIS active map. In this case, a :ref:`message will pop up <figlaunchwarning>` before the form is displayed informing you the layer isn't loaded. Add the layer to GIS and reload the profile the tool and the problem should be resolved.
 	- The layer isn't listed in the XML configuration document. Please refer to the :doc:`Setting up the tool <../setup/setup>` section and add it as a map layer.
-	- The layer is in the GIS active map, and it is listed in the configuration document, but the :ref:`LayerName <LayerName>` is spelled incorrectly. Note that the name must follow the exact format of the name of the layer in the active map.
+	- The layer is in the GIS active map, and it is listed in the configuration document, but the `<LayerName>` node value is spelled incorrectly. Note that the value must follow the exact format of the name of the layer in the active map.
 
 **The partner I want to extract data for is not shown in the form. How do I get the name to show up?**
 
@@ -43,7 +43,7 @@ Operating the tool
 
 **The tool is not extracting the expected data for the partner**
 
-	This issue will arise if the names of files in the :ref:`SQLFiles` column and/or :ref:`MapFiles>` column are not correct. Check that the names match the node names in the XML configuration file. Alternatively, check the :ref:`FormatColumn <FormatColumn>` and the :ref:`ExportColumn <ExportColumn>` to ensure the correct format of data is requested.
+	This issue will arise if the names of files in the :ref:`PartnerLayer` <SQLFiles> column and/or <MapFiles> column are not correct. Check that the names match the node names in the XML configuration file. Alternatively, check the :ref:`FormatColumn <FormatColumn>` and the :ref:`ExportColumn <ExportColumn>` to ensure the correct format of data is requested.
 
 
 Tool issues

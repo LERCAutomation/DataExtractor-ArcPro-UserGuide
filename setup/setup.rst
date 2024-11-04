@@ -313,6 +313,8 @@ The characters ``&``, ``<`` and ``>`` are not valid within values and, so in ord
 Setting up the SQL Server database
 ==================================
 
+.. _SQLServer:
+
 In addition to any SQL tables containing records to be extracted using the Data Extractor tool, two auxiliary tables and one view must also be present in the SQL Server database in order for the tool to be able to extract data from tables held in SQL Server. These are as follows:
 
 _`Survey` table
@@ -373,6 +375,8 @@ _`Spatial_Objects` view
 
 Setting up the Partner GIS layer
 ================================
+
+.. _PartnerLayer:
 
 Finally, there must be a GIS layer loaded in the active map containing the boundaries and attributes for all of the partners to extract. The name of this layer must be specified in the XML profile general attribute `PartnerTable`_.
 
