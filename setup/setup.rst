@@ -124,7 +124,7 @@ _`PartnerTable`
 		The partner GIS layer can be uploaded to SQL Server at the start of the extract process.
  
 _`PartnerColumn`
-	The column in the PartnerTable containing the partner name, which is passed to SQL Server by the tool to use the partner's boundary for selecting the records.
+	The column in the Partner GIS layer containing the partner name.
 
 _`ShortColumn`
 	The name of the column in the partner GIS layer containing the abbreviated name to use as the sub-folder name for the destination of extracted records. The sub-folder is created in the DefaultPath during extract if it does not already exist.
@@ -133,7 +133,7 @@ _`NotesColumn`
 	The name of the column in the partner GIS layer containing any notes text relating to the partner.
 
 _`ActiveColumn`
-	The name of the column in the partner GIS layer containing the Y/N flag to indicate if the partner is currently active.  Only active partners will appear in the tool interface and be available for processing. The values in this column should be ``Y`` or ``N``.
+	The name of the column in the partner GIS layer containing the Y/N flag to indicate if the partner is currently active. Only active partners will appear in the tool interface and be available for processing. The values in this column should be ``Y`` or ``N``.
 
 _`FormatColumn`
 	The name of the column in the partner GIS layer containing the GIS format required for the output records. The values in the column should be ``SHP`` or ``GDB``. If it is left blank no spatial outputs will be generated.
@@ -145,7 +145,7 @@ _`SQLTableColumn`
 	The name of the column in the partner GIS layer indicating which SQL table should be used for that partner.
 
 _`SQLFilesColumn`
-	The name of the column in the partner GIS layer indicating which SQL tables should be extracted for each partner. The entry in this column should be a comma-delimited list of the names of the layers (as defined in the XML file under :ref:`SQLTables <SQLTablesArc>`) that should be included for each partner.
+	The name of the column in the partner GIS layer indicating which SQL tables should be extracted for each partner. The entry in this column should be a comma-delimited list of the names of the layers (as defined in the XML file under :ref:`SQLTables <SQLTables>`) that should be included for each partner.
 
 _`MapFilesColumn`
 	The name of the column in the partner GIS layer indicating which ArcGIS layers should be extracted for each partner. The entry in this column should be a comma-delimited list of the names of the layers (as defined in the XML file under :ref:`MapLayers <MapLayers>`) that should be included for each partner.
@@ -202,7 +202,7 @@ SQL layer attributes
 
 While the spatial selection that the tool carries out is over the entirety of the SQL table selected associated with each partner, subsets of this data can be written out using the SQL table attributes. The details of these subsets are defined in the ``<SQLLayers>`` node.
 
-For each subset that may be included in the extracts a new child node must be created. For example, the node name (e.g. ``<AllSpecies>``) is a user-defined name used to identify an individual subset - the same name should be used in the `SQLFiles`_ column in the partner layer to indicate that this subset should be extracted for a partner.
+For each subset that may be included in the extracts a new child node must be created. For example, the node name (e.g. ``<AllSpecies>``) is a user-defined name used to identify an individual subset - the same name should be used in the `SQLFilesColumn`_ column in the partner layer to indicate that this subset should be extracted for a partner.
 
 The attributes that are required for each SQL table are as follows:
 
@@ -240,7 +240,7 @@ Map layer attributes
 
 .. _MapLayers:
 
-All map layer attributes are found within the ``<MapLayers>`` node. For each data layer that can be included in the extracts a new child node must be created. For example, the node name (e.g. ``<SSSIs>``) is a user-defined name used to identify the layer - the same name should be used in the `MapFiles`_ column in the partner layer to indicate that this layer should be extracted for a partner. The attributes that are required for each map layer are as follows:
+All map layer attributes are found within the ``<MapLayers>`` node. For each data layer that can be included in the extracts a new child node must be created. For example, the node name (e.g. ``<SSSIs>``) is a user-defined name used to identify the layer - the same name should be used in the `MapFilesColumn`_ column in the partner layer to indicate that this layer should be extracted for a partner. The attributes that are required for each map layer are as follows:
 
 _`LayerName`
 	The name of the source GIS layer as it is known in the ArcPro active map. This is also the name that will be used for the output shapefile or geodatabase feature class.
@@ -354,6 +354,61 @@ _`Spatial_Objects` view
 
 	.. note::
 		A number of stored procedures that are used by the tool for selecting the required records must also be present in the SQL Server database. To obtain copies of the above table and view, and these stored procedure,s please contact `Andy Foy <mailto:andy@andyfoyconsulting.co.uk>`_.
+
+
+.. raw:: latex
+
+   \newpage
+
+.. index::
+	single: Setting up the Partner GIS layer
+
+Setting up the Partner GIS layer
+================================
+
+Finally, there must be a GIS layer loaded in the active map containing the boundaries and attributes for all of the partners to extract. The name of this layer must be specified in the XML profile general attribute `PartnerTable`_.
+
+The columns in the GIS layer must be as follows:
+
+_`PartnerName`
+	The name of each partner. The name of this column must specified in the XML profile general attribute `PartnerColumn`_.
+
+_`ShortName`
+	The abbreviated name to use as the sub-folder name for the destination of extracted records for the partner. The name of this column must specified in the XML profile general attribute `ShortColumn`_.
+
+_`Notes`
+	Any notes relating to the partner. The name of this column must specified in the XML profile general attribute `NotesColumn`_.
+
+_`Active`
+	A Y/N flag to indicate if the partner is currently active. The name of this column must specified in the XML profile general attribute `ActiveColumn`_. The values in this column should be ``Y`` or ``N``.
+
+		..note:: Only active partners will appear in the tool interface and be available for processing.
+
+_`GISFormat`
+	The GIS format required for the output records. The name of this column must specified in the XML profile general attribute `FormatColumn`_. The values in the column should be ``SHP`` or ``GDB``.
+
+		..note:: If this column is left blank no spatial outputs will be generated.
+
+_`ExportFormat`
+	The text format required for the exported records. The name of this column must specified in the XML profile general attribute `ExportColumn`_. The values in this column should be ``CSV`` or ``TXT``.
+
+		..note:: If this column is left blank no text exports will be generated.
+
+_`SQLTable`
+	Which SQL table should be used for the partner. The name of this column must specified in the XML profile general attribute `SQLTableColumn`_.
+
+_`SQLFiles`
+	Which SQL files should be extracted for the partner. The name of this column must specified in the XML profile general attribute `SQLFilesColumn`_. The entry in this column should be a comma-delimited list of the names of the layers (as defined in the XML file under :ref:`SQLTables <SQLTables>`) that should be included for each partner.
+
+_`MapFiles`
+	Which GIS files should be extracted for the partner. The name of this column must specified in the XML profile general attribute `MapFilesColumn`_. The entry in this column should be a comma-delimited list of the names of the layers (as defined in the XML file under :ref:`MapLayers <MapLayers>`) that should be included for each partner.
+
+_`Tags`
+	Which survey tags, if any, should be included in the extracts. The name of this column must specified in the XML profile general attribute `TagsColumn`_. The survey tags should be a comma-delimited list.
+
+_`Geometry`
+	The spatial geometry representing the partner's area (including any required buffer). The name of this column must specified in the XML profile general attribute `SpatialColumn`_.
+
 
 .. raw:: latex
 

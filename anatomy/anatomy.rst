@@ -45,7 +45,7 @@ There are four component parts to the Data Extractor tool that work together to 
 #. An XML configuration file that specifies how the extracts are set up and what data should be exported for each data layer.
 #. The Data Extractor tool itself.
 
-The Data Extractor tool is used within a GIS application and requires all the required GIS layers to be preloaded in the GIS (see :numref:`figInterfaceAnnotated). Where data is to be extracted from SQL Server the partner boundary layer must also be preloaded into the SQL Server database.
+The Data Extractor tool is used within a GIS application and requires all the required GIS layers to be preloaded in the GIS (see :numref:`figInterfaceAnnotated`). Where data is to be extracted from SQL Server the partner boundary layer must also be preloaded into the SQL Server database.
 
 .. _figInterfaceAnnotated:
 
@@ -66,7 +66,7 @@ The Data Extractor tool requires minimum user input in order to carry out its pr
 
 .. _figUIAnnotated:
 
-.. figure:: figures/MenuExampleAnnotated.png
+.. figure:: figures/InterfaceExampleAnnotated.png
 	:align: center
 
 	The Data Extractor tool workflow
@@ -107,7 +107,7 @@ Output folder
 
 The outputs are stored in a user-defined folder (:numref:`figTabularOutputExample`). These outputs may include a combination of GIS layers and text files in different formats, as well as the log file.
 
-GIS layers can be output in ArcGIS (.shp) format or into an ArcGIS file geodatabase. Text file outputs can be produced in CSV or TXT format (:numref:`figTabularOutput`). Both type of outputs can be saved in separate sub-folders, if required, to keep them separate.
+GIS layers can be output in ArcGIS (.shp) format or into an ArcGIS file geodatabase. Text file outputs can be exported in CSV or TXT format (:numref:`figTabularOutput`). Both type of outputs can be saved in separate sub-folders, if required, to keep them separate.
 
 .. _figTabularOutputExample:
 
