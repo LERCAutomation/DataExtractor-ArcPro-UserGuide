@@ -3,6 +3,7 @@ Appendix
 ********
 
 .. index::
+    single: Appendix
     single: Appendix; Change Log
     single: Change Log
 
@@ -39,12 +40,71 @@ Change Log
 
 .. index::
     single: Appendix; XML files
+    single: XML files
     single: XML files; Example Tool XML file
 
 .. _example_xml:
 
-Example XML file
-================
+Example tool XML file
+=====================
+
+Below is an example of an XML profile that might be used to set up the Data Selector tool in ArcGIS Pro.
+Note, many of the settings have been included for illustration only and it is up to each user or LERC to
+ensure the system is configured to their requirements.
+
+::
+
+    <?xml version="1.0" encoding="utf-8"?>
+
+    <!--
+    WARNING: This file should be changed carefully and a backup should be
+    taken before any changes so that they can be backed out.  Changed lines
+    can also be commented out as below.
+    -->
+
+    <!--
+    This config file contains all the variables used by the DataSearches
+    ArcGIS Add-in tool.
+
+    The 'configuration' node is the 'root' node and signifies the start of the
+    contents of the configuration file.
+
+    The 'InitialConfig' node contains the nodes relating to the initial setup of the tool.
+
+    Note a detailed XML profile file must also be set up in order for the tool to run.
+
+    -->
+
+    <configuration>
+    <InitialConfig>
+        <!-- Are we allowing the user to choose their own configuration file? Yes/No -->
+        <ChooseXML>
+            <value>Yes</value>
+        </ChooseXML>
+
+        <!-- What is the default XML file called? If blank, the system looks for DefaultProfile.xml -->
+        <DefaultProfile>
+            <value></value>
+        </DefaultProfile>
+        
+        <!-- The URL of the online user guide -->
+        <HelpURL>
+            <value>https://dataextractor-userguide.readthedocs.io/en/latest/</value>
+        </HelpURL>
+    </InitialConfig>
+    </configuration>
+
+
+.. raw:: latex
+
+   \newpage
+
+.. index::
+    single: Appendix; XML files
+    single: XML files; Example user XML profile
+
+Example user XML profile
+========================
                                                                                                      
 Below is an example of an XML profile that might be used to set up the Data Extractor tool in ArcGIS Pro.
 Note, many of the settings have been included for illustration only and it is up to each user or LERC to ensure the system is configured to their requirements.

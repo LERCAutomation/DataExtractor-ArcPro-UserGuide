@@ -30,6 +30,7 @@ Repeating the process
    \newpage
 
 .. index::
+	single: Tool
 	single: Tool; Components
 
 The Data Extractor tool
