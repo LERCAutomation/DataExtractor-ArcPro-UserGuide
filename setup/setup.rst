@@ -5,12 +5,15 @@ Setting up the tool
 Before the Data Extractor tool will function, it needs to be installed and configured. It is essential that the configuration is carried out first. There are some differences between the setup for MapInfo and ArcGIS, which are made clear below.
 
 .. index::
-	single: Configuring the tool
+	single: Configuration
 
 Configuring the tool
 ====================
 
 There are two configuration files used by the tool. They must be in the same folder.
+
+.. index::
+	single: Configuration; Tool configuration file
 
 Tool configuration file
 -----------------------
@@ -28,6 +31,9 @@ HelpURL
 
 .. caution::
 	The name of this configuration file must be 'DataExtractor.xml'. The tool will not load if the file is not found.
+
+.. index::
+	single: Configuration; User configuration files
 
 User configuration profiles
 ---------------------------
@@ -62,7 +68,7 @@ Once editing has been completed and the edits have been saved, it is recommended
    \newpage
 
 .. index::
-	single: General attributes
+	single: Configuration; User configuration; General attributes
 
 General attributes
 ******************
@@ -195,7 +201,7 @@ _`DefaultOpenLogFile`
    \newpage
 
 .. index::
-	single: SQL layer attributes
+	single: Configuration; User configuration; SQL layer attributes
 
 SQL Table attributes
 ********************
@@ -237,7 +243,7 @@ _`MacroParm`
    \newpage
 
 .. index::
-	single: Map layer attributes
+	single: Configuration; User configuration; Map layer attributes
 
 Map Table attributes
 ********************
@@ -286,7 +292,7 @@ _`MacroParm`
    \newpage
 
 .. index::
-	single: Special characters in XML
+	single: Configuration; Special characters in XML
 
 Special characters in XML
 -------------------------
@@ -308,7 +314,7 @@ The characters ``&``, ``<`` and ``>`` are not valid within values and, so in ord
    \newpage
 
 .. index::
-	single: Setting up the SQL database
+	single: Configuration; Setting up the SQL database
 
 Setting up the SQL Server database
 ==================================
@@ -371,7 +377,7 @@ _`Spatial_Objects` view
    \newpage
 
 .. index::
-	single: Setting up the Partner GIS layer
+	single: Configuration; Setting up the Partner GIS layer
 
 Setting up the Partner GIS layer
 ================================
@@ -427,7 +433,7 @@ _`Geometry`
    \newpage
 
 .. index::
-	single: Installing the tool
+	single: Installation
 
 Installing the tool
 ===================
@@ -435,8 +441,11 @@ Installing the tool
 Installing the tool in ArcGIS Pro is straightforward. There are two ways it can be installed:
 
 .. note::
-	Before installing the tool you will need to install another ArcGIS Pro add-in 'DataToolbar'. This add-in with simply create a new 'Tools' toolbar onto which the Data Extractor tool and other Data tools will be added once installed. To install the toolbar follow the instructions below using  the DataToolbar add-in.
+	Before installing the tool you will need to install another ArcGIS Pro add-in 'DataToolbar'. This add-in with simply create a new 'Tools' toolbar onto which the Data Extractor tool and other Data tools will be added once installed. To install the toolbar follow the instructions below using the DataToolbar add-in.
 
+
+.. index::
+	single: Installation; via Windows Explorer
 
 Installation through Windows Explorer
 -------------------------------------
@@ -475,6 +484,9 @@ Once it is installed, it will appear in the Add-In Manager and on the 'Tools' me
 .. raw:: latex
 
    \newpage
+
+.. index::
+	single: Installation; within ArcGIS Pro
 
 Installation from within ArcGIS Pro
 -----------------------------------

@@ -30,7 +30,7 @@ Repeating the process
    \newpage
 
 .. index::
-	single: Tool overview
+	single: Tool; Components
 
 The Data Extractor tool
 =======================
@@ -45,7 +45,7 @@ There are four component parts to the Data Extractor tool that work together to 
 #. An XML configuration file that specifies how the extracts are set up and what data should be exported for each data layer.
 #. The Data Extractor tool itself.
 
-The Data Extractor tool is used within a GIS application and requires all the required GIS layers to be preloaded in the GIS (see :numref:`figInterfaceAnnotated`). Where data is to be extracted from SQL Server the partner boundary layer must also be preloaded into the SQL Server database.
+The Data Extractor tool is used within a GIS application and requires all the required GIS layers to be preloaded in the active map (see :numref:`figInterfaceAnnotated`). Where data is to be extracted from SQL Server the partner boundary layer must also be preloaded into the SQL Server database.
 
 .. _figInterfaceAnnotated:
 
@@ -58,6 +58,9 @@ The Data Extractor tool is used within a GIS application and requires all the re
 .. raw:: latex
 
    \newpage
+
+.. index::
+	single: Tool; Workflow
 
 Tool workflow
 -------------
@@ -95,15 +98,10 @@ In essence, the process that the tool follows is identical to the manual process
    \newpage
 
 .. index::
-	single: Tool outputs
+	single: Tool; Outputs
 
 Tool outputs
-============
-
-Below is an example of the GIS outputs generated from a data extract (:numref:`figGISOutputExample`).
-
-Output folder
--------------
+------------
 
 The outputs are stored in a user-defined folder (:numref:`figGISOutputExample`). These outputs may include a combination of GIS layers and text files in different formats, as well as the log file.
 

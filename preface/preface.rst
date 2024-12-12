@@ -13,7 +13,7 @@ Recommended User Knowledge
 Users
 -----
 
-This user guide assumes that users of the ArcGIS Pro version of theDataExtractor tool have:
+This user guide assumes that users of the ArcGIS Pro version of the DataExtractor tool have:
 
 * General IT experience including the use of Microsoft Windows.
 * Experience in the use of the GIS application ArcGIS Pro supported by this version of the tool.
@@ -99,7 +99,7 @@ The DataExtractor tool was developed with funding from:
 * Sussex Biodiversity Records Centre
 * Surrey Biodiversity Information Centre
 
-The DataExtractor user guide was developed with additional funding from:
+And with additional funding from:
 * Dorset Environmental Records Centre
 * Isle of Wight Local Records Centre
 
@@ -111,10 +111,10 @@ Many thanks are due to all the LERCs and their staff who have, and continue to, 
 	\newpage
 
 .. index::
-	single: Conventions used in this user guide
+	single: Conventions used in this guide
 
-Conventions used in this user guide
-===================================
+Conventions used in this guide
+==============================
 
 The following typographical conventions are used in this manual:
 
@@ -141,4 +141,3 @@ The following typographical conventions are used in this manual:
 
 .. caution::
 	Warnings where users should pay attention.
-

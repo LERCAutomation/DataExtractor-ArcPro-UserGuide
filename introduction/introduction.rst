@@ -17,12 +17,12 @@ To facilitate performing data extracts a new interface was developed - the **Dat
    \newpage
 
 .. index::
-	single: Tool overview
+	single: Overview
 
 Tool overview
 =============
 
-The Data Extractor tool is configurable in a flexible way according to the requirements of the LERC or individual user through an XML configuration file. It is integrated into the user interface of the GIS system and presented there as a button or menu item. The tool itself has a simple interface (:numref:`figUI`), requiring few user inputs and options. The output files can then be shared with the partner/stakeholder.
+The Data Extractor tool is configurable according to the requirements of the LERC or individual user through an XML configuration file. It is integrated into the user interface of the installed GIS application - appearing as an add-in tool button. The tool has a simple interface (:numref:`figUI`), requiring few user inputs and options. The output files can then be shared with the partner/stakeholder.
 
 .. _figUI:
 
@@ -32,7 +32,7 @@ The Data Extractor tool is configurable in a flexible way according to the requi
 
 	The Data Extractor tool interface
 
-Data layers for the tool can be contained in an SQL Server database or as GIS layers loaded in the GIS application. When performing an extract the tool uses a GIS layer, which is also uploaded to the associated SQL database, to define the boundary for each partner/stakeholder and extract the records which fall within this boundary. The attributes for each partner/stakeholder in this GIS layer define which of the available data layers will be extracted and in which format. Outputs are saved to a defined location, and a log file is kept that records the steps of each extract. The process is discussed in this document in more detail in the section on :doc:`running the tool <../execute/execute>`.
+Data layers for the tool can be contained in an SQL Server database or as GIS layers loaded in the GIS application. When performing an extract the tool uses a GIS layer, which is also uploaded to the associated SQL database, to define the boundary for each partner/stakeholder and extract the records which fall within this boundary. The attributes for each partner/stakeholder in this GIS layer define which of the available data layers will be extracted and in which format. Outputs are saved to a defined location, and a log file is kept that records the steps of each extract. The process is discussed in more detail in the section on :doc:`running the tool <../execute/execute>`.
 
 .. raw:: latex
 
@@ -46,7 +46,7 @@ Defining the way that extracts should be carried out, the output that they gener
 * For each data layer, a detailed definition of what attributes and records should be extracted.
 * Details of any macro scripts to post-process the output files, if required.
 
-Using this configuration file, each LERC can tailor the Data Extractor tool to its individual requirements. Examples of an XML profile are included in the :doc:`Appendix <../appendix/appendix>`, and the process of setting up this file is discussed in the section on :doc:`Setting up the tool <../setup/setup>`.
+An example of an XML profile is included in the :doc:`Appendix <../appendix/appendix>`, and the process of setting up this file is discussed in the section on :doc:`Setting up the tool <../setup/setup>`.
 
 Additional to an XML profile the SQL server database must be set up with a number of auxiliary tables and stored procedures. Again, the process of configuring this is discussed in the section on :doc:`Setting up the tool <../setup/setup>`. 
 
@@ -56,7 +56,7 @@ Additional to an XML profile the SQL server database must be set up with a numbe
 Benefits
 ========
 
-There are a number of clear benefits to using the Data Extractor tool for carrying out routine data extracts for partners. 
+There are a number of clear benefits to using the Data Extractor tool for carrying out routine data extracts for partners.
 
 1. The tool, by encapsulating and automating the process, saves considerable time over carrying out extracts manually.
 #. Both the process and the outputs of the extraction are standardised, therefore minimising the risk of user error that is present in a manual extraction.

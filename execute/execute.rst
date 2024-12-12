@@ -9,7 +9,7 @@ The operation of the Data Extractor tool is explained in this section. While the
 
 As discussed in the :doc:`Setting up the tool <../setup/setup>` section, the Data Extractor tool is operated from a GIS project file within which the data required to run the tool is already loaded in the active map window. Therefore, before running the tool, ensure the following conditions are met:
 
-- A GIS profile has been created which contains both the partner layer and the data layers (containing the sites and other layers that will be queried) in a map window.
+- A GIS project has been created which contains both the partner layer and the data layers (containing the sites and other layers that will be queried) in a map window.
 - The tool XML configuration file 'DataExtractor.xml' has been set up and is named correctly.
 - One or more user XML profiles have been set up and are in the same folder as the tool XML file.
 - The partner layer in the active map has the columns defined in the XML profiles.
@@ -25,6 +25,7 @@ As discussed in the :doc:`Setting up the tool <../setup/setup>` section, the Dat
 
 .. index::
 	single: Opening the form
+	single: Running the tool; Opening the tool
 
 Opening the tool
 ================
@@ -48,7 +49,8 @@ To open the Data Extractor tool in ArcGIS Pro, open the **Tools** menu bar and c
    \newpage
 
 .. index::
-	single: Initial set-up
+	single: Set-up
+	single: Running the tool; Initial set-up
 
 Initial set-up
 ==============
@@ -88,6 +90,7 @@ structure is correct, the list of user profiles will appear in the drop-down lis
 
 .. index::
 	single: Loading a profile
+	single: Running the tool; Loading a profile
 
 Loading a profile
 =================
@@ -165,9 +168,10 @@ A warning message will also appear on the form (:numref:`figMissingLayersWarning
 
 .. index::
 	single: Using the form
+	single: Using the form; Specifying the extract
 
-Using the form
-==============
+Specifying the extract
+======================
 
 The form can be used to process as many partners and tables as required during a single execution.
 
@@ -283,6 +287,9 @@ Finally, select whether the log file should be overwritten, and whether the log 
 
    \newpage
 
+.. index::
+	single: Using the form; Running the extract
+
 Running the extract
 ===================
 
@@ -326,7 +333,7 @@ You can now repeat the extract process for different partners and/or files as re
    \newpage
 
 .. index::
-	single: Extraction results
+	single: Extract results
 
 Extract results
 ===============

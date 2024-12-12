@@ -3,7 +3,45 @@ Appendix
 ********
 
 .. index::
-	single: Example XML file 
+    single: Appendix; Change Log
+    single: Change Log
+
+.. _change_log:
+
+Change Log
+==========
+
+**1.0.2**
+(12th Dec 2024)
+
+    * :guilabel:`Changed` - Standardise shared functions
+    * :guilabel:`Fixed` - Ensure list of SQL tables is loaded
+    * :guilabel:`Fixed` - Don't clear/reload form when attribute table is opened/closed
+
+**1.0.1**
+(29th Oct 2024)
+
+    * :guilabel:`Improved` - Improve load performance
+    * :guilabel:`Improved` - Increase progress reporting frequency
+    * :guilabel:`Fixed` - Disable double-click on scroll bars in lists
+    * :guilabel:`Fixed` - Handle empty output and export formats
+    * :guilabel:`Fixed` - Ensure <Ctrl>A selects hidden items in lists
+
+**1.0.0**
+(28th Oct 2024)
+
+    * Initial version
+
+
+.. raw:: latex
+
+   \newpage
+
+.. index::
+    single: Appendix; XML files
+    single: XML files; Example Tool XML file
+
+.. _example_xml:
 
 Example XML file
 ================
@@ -371,8 +409,26 @@ Note, many of the settings have been included for illustration only and it is up
 
 	\newpage
 
+.. index::
+    single: Appendix; Licence
+    single: License
+
+.. _licence:
+
 GNU Free Documentation License
 ==============================
+
+Permission is granted to copy, distribute and/or modify this document under 
+the terms of the GNU Free Documentation License, Version 1.3 or any later
+version published by the Free Software Foundation; with no Invariant Sections,
+no Front-Cover Texts and no Back-Cover Texts.  A copy of the license is
+included in the Appendix section.
+
+.. raw:: latex
+
+    The full GNU Free Documentation License can be viewed at `www.gnu.org/licenses/fdl-1.3.en.html <https://www.gnu.org/licenses/fdl-1.3.en.html>`_
+
+.. only:: html
 
 ::
 
