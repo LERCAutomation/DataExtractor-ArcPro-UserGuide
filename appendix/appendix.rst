@@ -100,7 +100,6 @@ ensure the system is configured to their requirements.
    \newpage
 
 .. index::
-    single: Appendix; XML files
     single: XML files; Example user XML profile
 
 Example user XML profile
