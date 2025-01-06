@@ -12,6 +12,12 @@ Appendix
 Change Log
 ==========
 
+**1.0.3**
+(6th Jan 2025)
+
+    * :guilabel:`Fixed` - Ensure XML profiles are not repeated
+    * :guilabel:`Fixed` - Replace hyphens in userid to avoid SQL error
+
 **1.0.2**
 (12th Dec 2024)
 
