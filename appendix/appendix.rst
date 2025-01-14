@@ -12,6 +12,14 @@ Appendix
 Change Log
 ==========
 
+**1.0.4**
+(14th Jan 2025)
+    * :guilabel:`Changed` - Remove XML variable 'ClearSubsetStoredProcedure'
+    * :guilabel:`Changed` - Checkboxes styles now match ArcGIS Pro style
+    * :guilabel:`Changed` - Standardise shared functions
+    * :guilabel:`Fixed` - Apply default options for exclusion clause, use centroids and upload to server
+    * :guilabel:`Fixed` - Correctly check output polygon record count
+
 **1.0.3**
 (6th Jan 2025)
 
