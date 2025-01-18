@@ -12,8 +12,14 @@ Appendix
 Change Log
 ==========
 
+**1.0.5**
+(18th Jan 2025)
+
+    * :guilabel:`Fixed` - Don't delete extract outputs incorrectly
+
 **1.0.4**
 (14th Jan 2025)
+
     * :guilabel:`Changed` - Remove XML variable 'ClearSubsetStoredProcedure'
     * :guilabel:`Changed` - Checkboxes styles now match ArcGIS Pro style
     * :guilabel:`Changed` - Standardise shared functions
